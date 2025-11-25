@@ -4,33 +4,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu</title>
+    <title>Menu - Zihua Li</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            background-color: black;
-            color: white;
-            font-family: Arial, sans-serif;
-            text-align: center;
+            background-color: #000;
+            color: #0f0;
+            font-family: 'Courier New', monospace;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            flex-direction: column;
+            min-height: 100vh;
+            padding: 20px;
         }
-        a {
-            color: white;
+
+        .menu {
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .menu-list {
+            list-style: none;
+        }
+
+        .menu-item {
+            margin: 25px 0;
+        }
+
+        .menu-link {
+            color: #0f0;
             text-decoration: none;
-            font-weight: bold;
+            font-size: 1.8em;
             display: block;
-            margin: 20px;
-            font-size: 2em;
+            transition: all 0.2s ease;
+        }
+
+        .menu-link::before {
+            content: '> ';
+            opacity: 0;
+            transition: opacity 0.2s ease;
+        }
+
+        .menu-link:hover::before {
+            opacity: 1;
+        }
+
+        .menu-link:hover {
+            padding-left: 20px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .menu-link {
+                font-size: 1.5em;
+            }
         }
     </style>
 </head>
 <body>
-    <a href="zihua-li-resume.pdf" download>Download my resume</a>
-    <a href="https://github.com/lizihuasteven">Redirect to my GitHub</a>
-    <a href="index.html">Redirect to zihuali.com</a>
+    <div class="menu">
+        <ul class="menu-list">
+            <li class="menu-item">
+                <a href="zihua-li-resume.pdf" download class="menu-link">resume.pdf</a>
+            </li>
+            <li class="menu-item">
+                <a href="https://github.com/lizihuasteven" target="_blank" class="menu-link">github.com/lizihuasteven</a>
+            </li>
+            <li class="menu-item">
+                <a href="index.html" class="menu-link">back</a>
+            </li>
+        </ul>
+    </div>
 </body>
 </html>
 
